@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px 25px;
+    position: relative;
+    z-index:1;
+    border: 2px solid black;
+    background: transparent;
+}
+a:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease 0.2s;
+}
+a:after{
+    position: absolute;
+    content: "Hover Me";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease 0.2s;
+}
+a:hover:before{
+    transform:perspective(1000px) rotateX(75deg);
+    transform-origin: top;
+}
+a:hover:after{
+    content: "";
+    transform:perspective(1000px) rotateX(-75deg);
+    transform-origin: bottom;
+}
